@@ -2,7 +2,7 @@
 
 GCP Terraform module for BetterNAT.
 
-This module is the user-facing GCP alpha install surface. It wraps the
+This module is the user-facing GCP install surface. It wraps the
 `nowakeai/betternat` provider's `betternat_gcp_gateway` resource for an
 existing VPC, private-client network tag, Firestore-backed HA, and optional
 stable public identity.
@@ -61,7 +61,7 @@ public IP before the static IP returns.
 
 `capacity_repair_mode` defaults to `mig`, which creates a zonal Managed
 Instance Group from a provider-rendered instance template. `unmanaged` remains
-available as an alpha escape hatch for narrow debugging or validation.
+available as a narrow debugging or validation escape hatch.
 
 ## Route Ownership
 
@@ -108,9 +108,10 @@ terraform init -backend=false
 terraform validate
 ```
 
-Before the matching BetterNAT provider `0.2.0` is published, run `init` and
-`validate` with a local provider filesystem mirror. CI runs formatting only
-until the provider release exists.
+Before the matching BetterNAT provider `0.2.0` is published, maintainers can
+run `init` and `validate` with a local provider filesystem mirror. After
+publication, the normal Terraform Registry install path should pass `init` and
+`validate` without a mirror.
 
 Before publication, validate this module once with the published
 `nowakeai/betternat` provider and once in a disposable GCP environment. The
