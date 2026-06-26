@@ -112,5 +112,7 @@ Before the matching BetterNAT provider `0.2.0` is published, run `init` and
 `validate` with a local provider filesystem mirror. CI runs formatting only
 until the provider release exists.
 
-GCP support remains alpha until the provider, module, examples, and release
-contract complete Registry and disposable-environment validation.
+Before publication, validate this module once with the published
+`nowakeai/betternat` provider and once in a disposable GCP environment. The
+module has already been validated with a local provider mirror for pre-release
+checks.
