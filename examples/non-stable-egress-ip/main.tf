@@ -27,6 +27,8 @@ module "betternat" {
 
   private_cidrs = var.private_cidrs
 
+  betternat_version = var.betternat_version
+
   manage_runtime_service_account = true
   manage_runtime_iam             = true
 
@@ -66,4 +68,9 @@ variable "client_tag" {
 
 variable "private_cidrs" {
   type = list(string)
+}
+
+variable "betternat_version" {
+  type        = string
+  description = "GCP-capable BetterNAT runtime release tag."
 }

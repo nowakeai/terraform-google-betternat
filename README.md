@@ -25,6 +25,8 @@ module "betternat" {
 
   private_cidrs = ["10.10.0.0/16"]
 
+  betternat_version = "v0.2.0"
+
   manage_runtime_service_account = true
   manage_runtime_iam             = true
 }
@@ -38,6 +40,11 @@ The module defaults to:
 - Debian 12 `e2-small` gateways,
 - route priority `800`,
 - no provider-created static external egress address.
+
+Set `betternat_version` to a GCP-capable BetterNAT runtime release, or pass
+explicit `agent_binary_url`, `agent_binary_sha256`, `cli_binary_url`, and
+`cli_binary_sha256` values for pre-release validation. Do not use an older AWS
+runtime release for GCP agent HA.
 
 Pass `stable_public_identity_address_name` to use an existing regional static
 external IPv4 address for stable egress identity handover. The module does not

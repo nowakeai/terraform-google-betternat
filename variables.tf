@@ -99,8 +99,8 @@ variable "enable_agent_ha" {
 
 variable "betternat_version" {
   type        = string
-  description = "BetterNAT runtime release tag used for gateway bootstrap artifacts."
-  default     = "v0.1.0"
+  description = "BetterNAT runtime release tag used for gateway bootstrap artifacts. Required unless explicit binary URLs and checksums are supplied."
+  default     = null
 }
 
 variable "firestore_database_id" {
